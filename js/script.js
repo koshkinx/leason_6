@@ -1,50 +1,50 @@
 // 1) Створити функцію яка отримує невизначену кількість аргументів, вираховує їх суму і повертає результат обчислень
 
-// function plus(...sum) {
-//   let number = 0;
-//   for (let i = 0; i < sum.length; i++) {
-//     number = sum[i] + number;
-//   }
-//   return console.log(number);
-// }
-// plus(1, 2, 3, 4, 5);
+function plus(...sum) {
+  let number = 0;
+  for (let i = 0; i < sum.length; i++) {
+    number = sum[i] + number;
+  }
+  return console.log(number);
+}
+plus(1, 2, 3, 4, 5);
 
 // 2)Створити функцію яка отримує від користувача день народження,місяць, рік і повертає вік користувача і якщо сьогодні
 //  день народження користувача то вивести привітання.
 
-// let Time = new Date();
+let Time = new Date();
 
-// function birthdayDate(DD, MM, YYYY) {
-//   if (
-//     arguments[0] - Time.getDate() == 0 &&
-//     arguments[1] - Time.getMonth() == 0
-//   ) {
-//     console.log(`Happy Birthday!!!`);
-//   } else {
-//     let FullYears = Time.getFullYear() - arguments[2] - 1;
-//     console.log(`Вам повних ${FullYears} років`);
-//   }
-//   return;
-// }
+function birthdayDate(DD, MM, YYYY) {
+  if (
+    arguments[0] - Time.getDate() == 0 &&
+    arguments[1] - Time.getMonth() == 0
+  ) {
+    console.log(`Happy Birthday!!!`);
+  } else {
+    let FullYears = Time.getFullYear() - arguments[2] - 1;
+    console.log(`Вам повних ${FullYears} років`);
+  }
+  return;
+}
 
-// birthdayDate(
-//   prompt("введіть день"),
-//   prompt("введіть місяць(число)"),
-//   prompt("введіть рік")
-// );
+birthdayDate(
+  prompt("введіть день"),
+  prompt("введіть місяць(число)"),
+  prompt("введіть рік")
+);
 
 // 3) Модифікуват завдання 2 добавивши в аргументи функцію вітання яка буде використанна як колбек, і в разі дня народження буде вітати користувача
 
-// function time(a, b, c, callback) {
-//   let Final = `${callback(a, b, c)}`;
+function time(a, b, c, callback) {
+  let Final = `${callback(a, b, c)}`;
 
-//   if (callback[a] - Time.getDate() == 0 && callback[b] - Time.getMonth() == 0) {
-//     let congrat = console.log(`щастя та здоров'ячка`);
-//   }
-//   return;
-// }
+  if (callback[a] - Time.getDate() == 0 && callback[b] - Time.getMonth() == 0) {
+    let congrat = console.log(`щастя та здоров'ячка`);
+  }
+  return;
+}
 
-// time(07, 00, 1989, birthdayDate);
+time(07, 00, 1989, birthdayDate);
 
 // 4) Створити функцію яка повертає сторіччя, функція отримує рік а повертає номер сторіччя. Наприклад:
 // 1810->19
@@ -115,11 +115,12 @@ function xxl(year) {
 }
 xxl(years);
 console.log(xxl(years));
+
 // 5) Створити функцію яка повертає інформацію скільки днів в цьому місяці а також в наступному  ( В цьому місяці 30 днів в наступному 31 )
 
-// function daysInMonth(month, year) {
-//   let w = new Date(year, month + 1, 0).getDate();
-//   let x = new Date(year, month, 0).getDate();
-//   return [w, x];
-// }
-// console.log(daysInMonth(2, 2019));
+function daysInMonth(month, year) {
+  let w = new Date(year, month + 1, 0).getDate();
+  let x = new Date(year, month, 0).getDate();
+  return [w, x];
+}
+console.log(daysInMonth(2, 2019));
